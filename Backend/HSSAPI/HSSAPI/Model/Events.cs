@@ -1,10 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 namespace HSSAPI.Model
 {
     public class Events
     {
+        [Key]
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Name field is required.")]
+        [StringLength(maximumLength: 100, MinimumLength = 2)]
         public string Name { get; set; }
         public string Description { get; set; }
         public string Type { get; set; }
@@ -33,13 +38,6 @@ namespace HSSAPI.Model
         public EventsContext(DbContextOptions<EventsContext> options) : base(options) { }
 
         public DbSet<Events> Events { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=hardskillsdb.c4lczsyycmwk.eu-north-1.rds.amazonaws.com; Database=HSS_database;TrustServerCertificate=True; User Id=admin;Password=NotSecure1", builder =>
-            {
-                builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
-            });
-            base.OnConfiguring(optionsBuilder);
-        }
+        
     }
 }

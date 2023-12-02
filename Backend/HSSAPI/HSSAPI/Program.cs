@@ -2,22 +2,26 @@ using HSSAPI.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
-using MySqlConnector;
-using Renci.SshNet;
+
 namespace HSSAPI
 {
     public class Program
     {
+        
         public static void Main(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
             string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             // Adding DbContexts to Events & Users
-            builder.Services.AddDbContext<EventsContext>(options =>
-            options.UseSqlServer(connectionString));
             builder.Services.AddDbContext<UsersContext>(options =>
-            options.UseSqlServer(connectionString));
+                {
+                    options.UseSqlServer(connectionString);
+                });
+            builder.Services.AddDbContext<EventsContext>(options =>
+                {
+                    options.UseSqlServer(connectionString);
+                });
 
             // Add Endpoint & Swagger
             builder.Services.AddEndpointsApiExplorer();
@@ -94,7 +98,7 @@ namespace HSSAPI
 
                 return Results.Created($"Nyt event oprettet med id: {user.Id}", user);
             });
-
+            app.UseSwagger(x => x.SerializeAsV2 = true);
             app.Run();
         }
         
