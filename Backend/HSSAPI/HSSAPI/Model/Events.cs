@@ -9,7 +9,6 @@ namespace HSSAPI.Model
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Name field is required.")]
-        [StringLength(maximumLength: 100, MinimumLength = 2)]
         public string Name { get; set; }
         public string Description { get; set; }
         public string Type { get; set; }
@@ -18,7 +17,8 @@ namespace HSSAPI.Model
         public string Price { get; set; } //String grundet simpelthed
         public string Image {  get; set; } //String grundet imgur eller lign. link
         public string EventBrinkLink { get; set; }
-        public Events(int id, string name, string desc, string type, DateTime datetime, string location, string price, string image, string eblink) 
+        public int Views { get; set; }
+        public Events(int id, string name, string desc, string type, DateTime datetime, string location, string price, string image, string eblink, int views) 
         {
             Id = id;
             Name = name;
@@ -29,6 +29,7 @@ namespace HSSAPI.Model
             Price = price;
             Image = image;
             EventBrinkLink = eblink;
+            Views = views;
         }
         [JsonConstructor]
         public Events() { }
