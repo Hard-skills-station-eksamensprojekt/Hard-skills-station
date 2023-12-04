@@ -7,10 +7,10 @@ namespace HSSAPI
 {
     public class Program
     {
-        
+
         public static void Main(string[] args)
         {
-
+            var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
             var builder = WebApplication.CreateBuilder(args);
             string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             // Adding DbContexts to Events & Users
@@ -26,9 +26,21 @@ namespace HSSAPI
             // Add Endpoint & Swagger
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddCors(options =>
+                {
+                    options.AddPolicy("AllowAll",
+                        builder =>
+                        {
+                            builder
+                                .AllowAnyOrigin()
+                                .AllowAnyMethod()
+                                .AllowAnyHeader()
+                                .AllowCredentials();
+                        });
+                });
 
 
-            var app = builder.Build();
+                    var app = builder.Build();
             app.UseSwaggerUI();
 
             // Configure the HTTP request pipeline.
@@ -98,6 +110,18 @@ namespace HSSAPI
 
                 return Results.Created($"Nyt event oprettet med id: {user.Id}", user);
             });
+            app.MapDelete("/deleteUser/{id}", (int id, UsersContext userCT) =>
+            {
+                var deleteID = userCT.Users.Find(id);
+                if (deleteID != null)
+                {
+                    userCT.Users.Remove(deleteID);
+                    userCT.SaveChanges();
+                    return Results.NoContent();
+                }
+                else { return Results.NotFound(); }
+            });
+
             app.UseSwagger(x => x.SerializeAsV2 = true);
             app.Run();
         }

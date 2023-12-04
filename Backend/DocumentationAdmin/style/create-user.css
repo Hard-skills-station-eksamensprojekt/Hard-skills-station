@@ -1,0 +1,66 @@
+.create-user-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.create-user-header {
+  width: 100%;
+  display: flex;
+  max-width: auto;
+  align-self: flex-start;
+  padding-top: var(--dl-space-space-twounits);
+  padding-left: var(--dl-space-space-threeunits);
+  padding-right: var(--dl-space-space-threeunits);
+  padding-bottom: var(--dl-space-space-twounits);
+  justify-content: space-between;
+  background-color: #0062c2;
+}
+.create-user-image {
+  height: 2rem;
+}
+.create-user-container1 {
+  flex: 0 0 auto;
+  width: auto;
+  margin: var(--dl-space-space-oneandhalfunits);
+  display: flex;
+  align-self: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.create-user-container2 {
+  flex: 0 0 auto;
+  width: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.create-user-textinput {
+  margin: var(--dl-space-space-unit);
+}
+.create-user-container3 {
+  flex: 0 0 auto;
+  width: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.create-user-textinput1 {
+  margin: var(--dl-space-space-unit);
+}
+.create-user-button {
+  align-self: center;
+}
+@media(max-width: 767px) {
+  .create-user-header {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+}
+@media(max-width: 479px) {
+  .create-user-header {
+    padding: var(--dl-space-space-unit);
+  }
+}

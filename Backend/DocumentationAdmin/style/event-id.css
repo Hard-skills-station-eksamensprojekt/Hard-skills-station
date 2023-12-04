@@ -1,0 +1,68 @@
+.event-id-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.event-id-header {
+  width: 100%;
+  display: flex;
+  max-width: auto;
+  align-self: flex-start;
+  padding-top: var(--dl-space-space-twounits);
+  padding-left: var(--dl-space-space-threeunits);
+  padding-right: var(--dl-space-space-threeunits);
+  padding-bottom: var(--dl-space-space-twounits);
+  justify-content: space-between;
+  background-color: #0062c2;
+}
+.event-id-image {
+  height: 2rem;
+}
+.event-id-container1 {
+  flex: 0 0 auto;
+  width: auto;
+  margin: var(--dl-space-space-oneandhalfunits);
+  display: flex;
+  align-self: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.event-id-container2 {
+  flex: 0 0 auto;
+  width: auto;
+  margin: var(--dl-space-space-oneandhalfunits);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.event-id-textinput {
+  margin: var(--dl-space-space-unit);
+}
+.event-id-button {
+  align-self: center;
+}
+.event-id-container3 {
+  flex: 0 0 auto;
+  width: auto;
+  margin: var(--dl-space-space-oneandhalfunits);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.event-id-textarea {
+  margin: var(--dl-space-space-halfunit);
+}
+@media(max-width: 767px) {
+  .event-id-header {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+}
+@media(max-width: 479px) {
+  .event-id-header {
+    padding: var(--dl-space-space-unit);
+  }
+}
