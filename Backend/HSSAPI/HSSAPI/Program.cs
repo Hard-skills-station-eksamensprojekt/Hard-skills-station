@@ -2,6 +2,7 @@ using HSSAPI.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
 namespace HSSAPI
 {
@@ -10,9 +11,13 @@ namespace HSSAPI
 
         public static void Main(string[] args)
         {
-            var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
             var builder = WebApplication.CreateBuilder(args);
-            string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            string? connectionString = builder.Configuration.GetConnectionString("AWS_RDS")
+                /*.Replace("{DB_SERVER}", Environment.GetEnvironmentVariable("DB_SERVER"))
+                .Replace("{DB_DATABASE}", Environment.GetEnvironmentVariable("DB_DATABASE"))
+                .Replace("{DB_USER}", Environment.GetEnvironmentVariable("DB_USER"))
+                .Replace("{DB_PASSWORD}", Environment.GetEnvironmentVariable("DB_PASSWORD"))*/;
+        
             // Adding DbContexts to Events & Users
             builder.Services.AddDbContext<UsersContext>(options =>
                 {
@@ -26,21 +31,9 @@ namespace HSSAPI
             // Add Endpoint & Swagger
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddCors(options =>
-                {
-                    options.AddPolicy("AllowAll",
-                        builder =>
-                        {
-                            builder
-                                .AllowAnyOrigin()
-                                .AllowAnyMethod()
-                                .AllowAnyHeader()
-                                .AllowCredentials();
-                        });
-                });
 
-
-                    var app = builder.Build();
+            var app = builder.Build();
+            app.UseHttpsRedirection();
             app.UseSwaggerUI();
 
             // Configure the HTTP request pipeline.

@@ -1,4 +1,4 @@
-endpoint = "https://localhost:32774/"
+endpoint = "http://13.48.26.100:9999/"
 function sendEventData() {
     let allInputs = document.getElementsByClassName("create-event-textinput input")
     const body = JSON.stringify({
