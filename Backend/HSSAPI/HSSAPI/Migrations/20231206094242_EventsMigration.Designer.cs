@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HSSAPI.Migrations
 {
     [DbContext(typeof(EventsContext))]
-    [Migration("20231204082807_Events2")]
-    partial class Events2
+    [Migration("20231206094242_EventsMigration")]
+    partial class EventsMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,10 @@ namespace HSSAPI.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateAndTime")
                         .HasColumnType("datetime2");

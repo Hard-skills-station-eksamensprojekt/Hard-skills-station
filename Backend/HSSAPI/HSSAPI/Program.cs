@@ -12,17 +12,9 @@ namespace HSSAPI
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            string? connectionString = builder.Configuration.GetConnectionString("AWS_RDS")
-                /*.Replace("{DB_SERVER}", Environment.GetEnvironmentVariable("DB_SERVER"))
-                .Replace("{DB_DATABASE}", Environment.GetEnvironmentVariable("DB_DATABASE"))
-                .Replace("{DB_USER}", Environment.GetEnvironmentVariable("DB_USER"))
-                .Replace("{DB_PASSWORD}", Environment.GetEnvironmentVariable("DB_PASSWORD"))*/;
+            string? connectionString = builder.Configuration.GetConnectionString("AWS_RDS");
         
-            // Adding DbContexts to Events & Users
-            builder.Services.AddDbContext<UsersContext>(options =>
-                {
-                    options.UseSqlServer(connectionString);
-                });
+            // Adding DbContexts to Events
             builder.Services.AddDbContext<EventsContext>(options =>
                 {
                     options.UseSqlServer(connectionString);
@@ -76,6 +68,7 @@ namespace HSSAPI
                     toChangeID.Description = events.Description;
                     toChangeID.Type = events.Type;
                     toChangeID.DateAndTime = events.DateAndTime;
+                    toChangeID.Company = events.Company;
                     toChangeID.Location = events.Location;
                     toChangeID.Price = events.Price;
                     toChangeID.Image = events.Image;
@@ -92,24 +85,6 @@ namespace HSSAPI
                 {
                     eventCT.Events.Remove(deleteID);
                     eventCT.SaveChanges();
-                    return Results.NoContent();
-                }
-                else { return Results.NotFound(); }
-            });
-            app.MapPost("/createAdminUser", (Users user, UsersContext userCT) =>
-            {
-                userCT.Users.Add(user);
-                userCT.SaveChanges();
-
-                return Results.Created($"Nyt event oprettet med id: {user.Id}", user);
-            });
-            app.MapDelete("/deleteUser/{id}", (int id, UsersContext userCT) =>
-            {
-                var deleteID = userCT.Users.Find(id);
-                if (deleteID != null)
-                {
-                    userCT.Users.Remove(deleteID);
-                    userCT.SaveChanges();
                     return Results.NoContent();
                 }
                 else { return Results.NotFound(); }

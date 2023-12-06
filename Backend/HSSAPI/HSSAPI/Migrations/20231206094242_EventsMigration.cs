@@ -21,10 +21,12 @@ namespace HSSAPI.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateAndTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Company = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EventBrinkLink = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    EventBrinkLink = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Views = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
