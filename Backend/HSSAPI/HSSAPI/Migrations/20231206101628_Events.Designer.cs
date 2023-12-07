@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HSSAPI.Migrations
 {
     [DbContext(typeof(EventsContext))]
-    [Migration("20231206094242_EventsMigration")]
-    partial class EventsMigration
+    [Migration("20231206101628_Events")]
+    partial class Events
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

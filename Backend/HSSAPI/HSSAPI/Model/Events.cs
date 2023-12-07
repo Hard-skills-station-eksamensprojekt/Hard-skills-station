@@ -19,7 +19,7 @@ namespace HSSAPI.Model
         public string Image {  get; set; } //String grundet imgur eller lign. link
         public string EventBrinkLink { get; set; }
         public int Views { get; set; }
-        public Events(int id, string name, string desc, string type, DateTime datetime,string company, string location, string price, string image, string eblink) 
+        public Events(int id, string name, string desc, string type, DateTime datetime,string company, string location, string price, string image, string eblink, int views) 
         {
             Id = id;
             Name = name;
@@ -31,7 +31,7 @@ namespace HSSAPI.Model
             Price = price;
             Image = image;
             EventBrinkLink = eblink;
-            Views = 0;
+            Views = views;
         }
         [JsonConstructor]
         public Events() { }

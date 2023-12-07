@@ -52,6 +52,18 @@ namespace HSSAPI
                 }
                 else { return Results.NotFound(); }
             });
+            app.MapGet("/eventsType/{type}", async (string type, EventsContext eventContext) =>
+            {
+                var eventsOfType = await eventContext.Events
+                    .Where(e => e.Type == type)
+                    .ToListAsync();
+                if (eventsOfType != null)
+                {
+                    return Results.Ok(eventsOfType);
+                }
+                else { return Results.NotFound("Ikke defineret type"); }
+            });
+
             app.MapPost("/createEvent", (Events events, EventsContext eventCT) =>
             {
                 eventCT.Events.Add(events);
@@ -59,20 +71,40 @@ namespace HSSAPI
 
                 return Results.Created($"Nyt event oprettet med id: {events.Id}", events);
             });
-            app.MapPut("/updateEvent/{id}", (int id, Events events, EventsContext eventCT) =>
+            app.MapPut("/updateEvent/{id}", (int id, Events updatedEvent, EventsContext eventCT) =>
             {
                 var toChangeID = eventCT.Events.Find(id);
                 if (toChangeID != null)
                 {
-                    toChangeID.Name = events.Name;
-                    toChangeID.Description = events.Description;
-                    toChangeID.Type = events.Type;
-                    toChangeID.DateAndTime = events.DateAndTime;
-                    toChangeID.Company = events.Company;
-                    toChangeID.Location = events.Location;
-                    toChangeID.Price = events.Price;
-                    toChangeID.Image = events.Image;
-                    toChangeID.EventBrinkLink = events.EventBrinkLink;
+                    if (updatedEvent.Name != null)
+                        toChangeID.Name = updatedEvent.Name;
+
+                    if (updatedEvent.Description != null)
+                        toChangeID.Description = updatedEvent.Description;
+
+                    if (updatedEvent.Type != null)
+                        toChangeID.Type = updatedEvent.Type;
+
+                    if (updatedEvent.DateAndTime != default)
+                        toChangeID.DateAndTime = updatedEvent.DateAndTime;
+
+                    if (updatedEvent.Company != null)
+                        toChangeID.Company = updatedEvent.Company;
+
+                    if (updatedEvent.Location != null)
+                        toChangeID.Location = updatedEvent.Location;
+
+                    if (updatedEvent.Price != null)
+                        toChangeID.Price = updatedEvent.Price;
+
+                    if (updatedEvent.Image != null)
+                        toChangeID.Image = updatedEvent.Image;
+
+                    if (updatedEvent.EventBrinkLink != null)
+                        toChangeID.EventBrinkLink = updatedEvent.EventBrinkLink;
+                    
+                    if (updatedEvent.Views != 0)
+                        toChangeID.Views = updatedEvent.Views;
                     eventCT.SaveChanges();
                     return Results.NoContent();
                 }
