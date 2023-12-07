@@ -20,11 +20,21 @@ namespace HSSAPI
                     options.UseSqlServer(connectionString);
                 });
 
+            // ADD CORS
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAnyOrigin",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+            });
+
             // Add Endpoint & Swagger
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+            app.UseCors("AllowAnyOrigin");
             app.UseHttpsRedirection();
             app.UseSwaggerUI();
 
