@@ -210,9 +210,6 @@ footer h3 {
         align-items: center;
     }
 
-    #dropDownMenu {
-        
-    }
     #dropDownMenu i {
         transition: 400ms ease-in-out;
         transform: rotate(0deg);
@@ -220,11 +217,12 @@ footer h3 {
     #subNav {
         display: none;
         position: absolute;
-        top: 2em;
-        line-height: 2;
+        top: 2.2em;
+        line-height: 1.7;
+        font-size: 25px;
         border-radius: 0 0 25% 25%;
         background-color: var(--header-color);
-        padding: 0.2em 1em;
+        padding: 1em 1em 0.6em 1em;
     }
 
     main {
@@ -289,6 +287,15 @@ footer h3 {
 
     #searchBar {
         font-size: 30px;
+    }
+
+    #subNav {
+        display: none;
+        position: absolute;
+        top: 2.22em;
+        line-height: 1.7;
+        font-size: 30px;
+        padding: 0.2em 1em 0.6em 1em;
     }
 
     h1 {
