@@ -1,21 +1,73 @@
-// Definer URL'en til den API, du ønsker at forbinde til
-const apiUrl = 'http://13.48.26.100:9999/events'; // Erstat med den faktiske API-endepunkt
+import { fetchAllEvents, fetchSpecificTypeOfEvent, fetchSpecificEvent } from './api-requests.js';
+//Funktion til at vise data i HTML
+async function displayData() {
+  try {
+    const data = await fetchSpecificTypeOfEvent('kurser'); // Hent data fra API-modulet
 
-// Lav en GET-forespørgsel til API'en ved hjælp af fetch()
-fetch(apiUrl)
-  .then(response => {
-    // Tjek, om svaret er OK (statuskode 200-299)
-    if (!response.ok) {
-      throw new Error('Netværkssvaret var ikke i orden');
-    }
-    // Hvis svaret er OK, konverter det til JSON-format
-    return response.json();
-  })
-  .then(data => {
-    // Håndter den data, der returneres fra API'en
-    console.log(data); // Her kan du gøre, hvad du vil med dataen
-  })
-  .catch(error => {
-    // Håndter fejl, hvis der opstår nogen under forbindelsen til API'en
+    const dataContainer = document.getElementById('data-container');
+    // Generer dynamisk HTML baseret på dataene og vis det i containeren
+    data.forEach(item => {
+      const listItem = document.createElement('div');
+      listItem.classList.add('data-item'); // Tilføj passende klasse eller id
+      listItem.innerHTML = `
+        <p>${item.name}</p>
+        <p>${item.description}</p>
+        <p>${item.type}</p>
+        <p>${item.dateAndTime}</p>
+        <p>${item.company}</p>
+        <p>${item.location}</p>
+        <p>${item.price}</p>
+      `;
+      dataContainer.appendChild(listItem);
+    });
+  } catch (error) {
     console.error('Der opstod et problem med forbindelsen:', error);
-  });
+  }
+}
+async function displaySpecificEvent(id) {
+  try {
+    const data = await fetchSpecificEvent(id); // Hent data fra API-modulet
+
+    const dataContainer = document.getElementById('data-container');
+    // Generer dynamisk HTML baseret på dataene og vis det i containeren
+    data.forEach(item => {
+      const listItem = document.createElement('div');
+      listItem.classList.add('data-item'); // Tilføj passende klasse eller id
+      listItem.innerHTML = `
+        <p>${item.name}</p>
+        <p>${item.description}</p>
+        <p>${item.type}</p>
+        <p>${item.dateAndTime}</p>
+        <p>${item.company}</p>
+        <p>${item.location}</p>
+        <p>${item.price}</p>
+      `;
+      dataContainer.appendChild(listItem);
+    });
+  } catch (error) {
+    console.error('Der opstod et problem med forbindelsen:', error);
+  }
+}
+async function displaySpecificTypeOfEvents(type) {
+  try {
+    const data = await fetchSpecificTypeOfEvent(type); // Hent data fra API-modulet
+
+    const dataContainer = document.getElementById('data-container');
+    // Generer dynamisk HTML baseret på dataene og vis det i containeren
+    data.forEach(item => {
+      const listItem = document.createElement('div');
+      listItem.classList.add('data-item'); // Tilføj passende klasse eller id
+      listItem.innerHTML = `
+        <p>${item.name}</p>
+        <p>${item.type}</p>
+        <p>${item.dateAndTime.split('T')[0]}</p>
+        <p>${item.dateAndTime.split('T')[1]}</p>
+        <p>${item.price}</p>
+      `;
+      dataContainer.appendChild(listItem);
+    });
+  } catch (error) {
+    console.error('Der opstod et problem med forbindelsen:', error);
+  }
+}
+export { displayData, displaySpecificEvent, displaySpecificTypeOfEvents }

@@ -1,10 +1,47 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="da-dk">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Hard-Skills Station</title>
+    <meta name="title" content="Hard-Skills Station | Koldings unikke kvalificeringsmuligheder">
+    <meta name="description" content="Hard-Skills Station arbejder sammen med Koldings virksomheder til at give studerende og alumner unikke opkvalificeringsmuligheder i et bredt sortiment af emner">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://hss.tjuulm.dk">
+    <meta property="og:title" content="Hard-Skills Station | Koldings unikke kvalificeringsmuligheder">
+    <meta property="og:description" content="Hard-Skills Station arbejder sammen med Koldings virksomheder til at give studerende og alumner unikke opkvalificeringsmuligheder i et bredt sortiment af emner">
+    <meta property="og:image" content= "/Frontend/media/favicon.svg">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
+    <link rel="stylesheet" href="/Frontend/styles.css">
+    <link rel="icon" href="/Frontend/media/favicon.svg" type="image/svg">
+    <link rel="stylesheet" href="/Frontend/workshop-style.css">
 </head>
 <body>
-    <script src="/Frontend/api-service.js"></script>
+    <header>
+        <i class="fa fa-bars" id="mobileMenuIcon"></i>
+        <a href="index.html">
+          <picture>
+            <source
+            srcset="/Frontend/media/hssLogoWide.svg"
+            width="150"
+            media="(min-width: 725px)"
+            >
+            <img src="/Frontend/media/hssLogo.svg" alt="Hard-Skills Station Logo" height="50" width="50">
+          </picture>
+        </a>
+        <div>
+            <i class="fa fa-cog" id="settingsCog"></i>
+            <button id="changeToDanish">Skift til dansk</button>
+            <button id="changeToEnglish">Switch to English</button>
+        </div>
+    </header>
+    <div id="data-container" class="data-container">
+        <!-- Her vil data blive vist -->
+      </div>
+    <script src="/Frontend/courses.js" type="module"></script>
 </body>
 </html>
