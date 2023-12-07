@@ -22,9 +22,18 @@
 <body>
     <header>
         <i class="fa fa-bars" id="mobileMenuIcon"></i>
-        <a href="index.html"><img src="/Frontend/media/hssLogoWide.svg" alt="Hard-Skills Station Logo" height="49" width="150"></a>
-        <nav>
-            <p id="dropDownMenu">Tjenester<i class="fa fa-caret-down"></i></p>
+        <a href="index.html">
+          <picture>
+            <source
+            srcset="/Frontend/media/hssLogoWide.svg"
+            width="150"
+            media="(min-width: 725px)"
+            >
+            <img src="/Frontend/media/hssLogo.svg" alt="Hard-Skills Station Logo" height="50" width="50">
+          </picture>
+        </a>
+        <nav id="mainNav">
+            <p id="dropDownMenu">Tjenester <i class="fa fa-caret-down"></i></p>
             <nav id="subNav">
                 <ul>
                     <li><a href="#">Workshops</a></li>
@@ -33,7 +42,7 @@
             </nav>
             <input type="search" id="searchBar" placeholder="Søg...">
             
-            <i class="fa fa-cog"></i>
+            <i class="fa fa-cog" id="settingsCog"></i>
             <nav id="settings">
                 <button id="changeToDanish">Skift til dansk</button>
                 <button id="changeToEnglish">Switch to English</button>
