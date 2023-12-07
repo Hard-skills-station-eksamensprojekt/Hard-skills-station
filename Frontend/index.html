@@ -22,7 +22,7 @@
 <body>
     <header>
         <i class="fa fa-bars" id="mobileMenuIcon"></i>
-        <a href="index.html">
+        <a href="index.html" id="logoAnchor">
           <picture>
             <source
             srcset="/Frontend/media/hssLogoWide.svg"
@@ -33,6 +33,7 @@
           </picture>
         </a>
         <nav id="mainNav">
+          <div id="subNavWrapper">
             <p id="dropDownMenu">Tjenester <i class="fa fa-caret-down"></i></p>
             <nav id="subNav">
                 <ul>
@@ -40,14 +41,21 @@
                     <li><a href="#">Kurser</a></li>
                 </ul>
             </nav>
+          </div>
+          <form action="#" id="searchWrapper">
             <input type="search" id="searchBar" placeholder="Søg...">
-            
-            <i class="fa fa-cog" id="settingsCog"></i>
-            <nav id="settings">
-                <button id="changeToDanish">Skift til dansk</button>
-                <button id="changeToEnglish">Switch to English</button>
-            </nav>
-            <i class="fa fa-user"></i>
+            <button type="submit" id="searchBtn">
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+          
+          <i class="fa fa-search" id="searchIcon"></i>
+          <i class="fa fa-cog" id="settingsCog"></i>
+          <nav id="settings">
+              <button id="changeToDanish">Skift til dansk</button>
+              <button id="changeToEnglish">Switch to English</button>
+          </nav>
+          <i class="fa fa-user" id="userIcon"></i>
         </nav>
     </header>
     <main>
@@ -55,46 +63,51 @@
             <h1>HARD-SKILLS STATION</h1>
             <p>
                 Sammen med Koldings virksomheder giver vi studerende og alumner unikke
-                opkvalificeringsmuligheder. Emnerne spænder bredt fra Power BI, programmering
-                & no-code, video, foto, podcast til design, illustrator og laser-cutter workshops.
-                Se programmet og tilmeld dig gratis - der er begrænsede pladser, og deltagelse
-                kræver tilmelding via eventbrite.
+                opkvalificeringsmuligheder.
+            </p>
+            <p>Emnerne spænder bredt fra Power BI, programmering
+              & no-code, video, foto, podcast til design, illustrator og laser-cutter workshops.
+              Se programmet og tilmeld dig gratis - der er begrænsede pladser, og deltagelse
+              kræver tilmelding via eventbrite.
             </p>
             <a href="#" id="mainCTA" class="CTAbtn">
                 SE ALLE KURSER
                 <i class="fa fa-chevron-right"></i>
             </a>
-            <aside id="bckSlider"> <!--Info fra database fyldes heri-->
-                <h2 id="courseTitle"></h2>
-                <span id="courseDate"><i class="fa fa-calendar-alt"></i> Dato here</span>
-                <span id="courseLang">Sprog <img src="" alt="dkFlag"></img></span>
-                <span id="courseLocation"><i class="fa fa-map-marker-alt"></i>  Location here</span>
-                <nav id="sliderPagination">
-                    <ul>
-                        <li id="pagination1"></li>
-                        <li id="pagination2"></li>
-                        <li id="pagination3"></li>
-                        <li id="pagination4"></li>
-                        <li id="pagination5"></li>
-                        <li id="pagination6"></li>
-                    </ul>
-                </nav>
-            </aside>
-        </section>
+          </section>
+          <aside id="bckSlider"> <!--Info fra database fyldes heri-->
+              <h2 id="courseTitle"></h2>
+              <span id="courseDate"><i class="fa fa-calendar-alt"></i> Dato here</span>
+              <span id="courseLang">Sprog <img src="" alt="dkFlag"></img></span>
+              <span id="courseLocation"><i class="fa fa-map-marker-alt"></i>  Location here</span>
+              <nav id="sliderPagination">
+                  <ul>
+                      <li id="pagination1"></li>
+                      <li id="pagination2"></li>
+                      <li id="pagination3"></li>
+                      <li id="pagination4"></li>
+                      <li id="pagination5"></li>
+                      <li id="pagination6"></li>
+                  </ul>
+              </nav>
+          </aside>
     </main>
     <footer>
-        <h3>Kontakt os</h3>
+      <div class="wrapper">
+        <h3 id="contactH3">Kontakt os</h3>
         <address id="contactInfo">
             <a href="tel:+45%2079%2079%2054%2008">
                 <i class="fa-solid fa-phone"></i>
                 <span>+45 79 79 54 08</span>
-            </a>
+            </a><br>
             <a href="mailto:campus@kolding.dk">
                 <i class="fa-regular fa-envelope"></i>
                 <span>campus@kolding.dk </span>
             </a>
         </address>
-        <h3>Følg os</h3>
+      </div>
+      <div class="wrapper">
+        <h3 id="socialH3">Følg os</h3>
         <nav id="socials">
             <ul>
                 <li>
@@ -105,6 +118,7 @@
                 </li>
             </ul>
         </nav>
+      </div>
     </footer>
     <script src="/Frontend/language.js" type="module"></script>
 </body>

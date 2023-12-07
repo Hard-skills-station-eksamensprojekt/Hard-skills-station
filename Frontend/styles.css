@@ -25,6 +25,9 @@ a {
     text-decoration: none;
     color: white;
 }
+#logoAnchor {
+    height: 50px;
+}
 
 body {
     background-color: var(--bck-color);
@@ -32,76 +35,283 @@ body {
 }
 
 header {
+    width: 100dvw;
+    max-width: 2500px;
+    height: 67px;
+    position: fixed;
+    inset: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: relative;
-    background-color: var(--header-color);
-    border-radius: 0 0 25px 25px;
     font-size: 30px;
+    border-radius: 0 0 25px 25px;
+    background-color: var(--header-color);
     padding: 0.2em 0;
-    margin: 0 0 1.5em 0;
+    margin: 0 auto;
 }
 
-#searchBar, #settings, #settingsCog, #dropDownMenu, #subNav, #bckSlider{
+#searchWrapper > *, #settings, #settingsCog, #dropDownMenu, #subNav, #bckSlider{
     display: none;
 }
 
-#searchBar {
-    font-size: 20px;
+#searchWrapper {
     width: 100dvw;
+    height: min-content;
     position: absolute;
-    bottom: -30px;
+    bottom: -1.1em;
     left: 0;
+    display: flex;
+    padding: 0 0.2em;
+}
+#searchBar {
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    padding: 0.1em 0.8em;
+}
+#searchBtn {
+    font-size: 20px;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    background-color: var(--accent-color);
+    padding: 0.2em 1em;
 }
 
+#searchBar:active, #searchBar:focus, #searchBar:focus + #searchBtn {
+
+    outline: 2px solid var(--accent-color);
+}
+
+#mainNav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 1em;
+}
 
 main {
-    height: 80dvh;
+    height: max-content;
+    padding: 100px 1em;
 }
 
 h1 {
     font-size: 50px;
     text-align: center;
+    margin: 0 0 0.2em 0;
 }
 
+#focusContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+#focusContent p {
+    font-size: 20px;
+}
+
+.CTAbtn {
+    width: max-content;
+    font-weight: bold;
+    border-radius: 25px;
+    background-color: var(--accent-color);
+    
+}
+#mainCTA {
+    font-size: 24px;
+    padding: 0.7em 1em;
+    margin: 2em 0 0 0;
+}
+
+
 footer {
+    width: 100dvw;
+    height: min-content;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-around;
+    font-size: 14px;
     background-color: var(--footer-color);
     border-radius: 25px 25px 0 0;
+    padding: 0.5em;
+}
+footer h3 {
+    font-size: 25px;
+    margin: 0 0 0.2em 0;
+}
+#socials ul {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    font-size: 25px;
 }
 
 /* --------------------- iPad Version -----------------------*/ 
 @media screen and (width >= 725px) {
 
+    #searchWrapper {
+        bottom: -1.1em;
+        left: 0;
+    }
+    #searchBar {
+        font-size: 30px;
+    }
+    #searchBtn {
+        padding: 0.2em 2em;
+    }
 
+    h1 {
+        font-size: 90px;
+    }
+
+    footer {
+        justify-content: center;
+        gap: 2em;
+    }
 }
 
-/* --------------------- Desktop Version -----------------------*/ 
+/* --------------------- Laptop Version -----------------------*/ 
 @media screen and (width >= 1200px) {
-    #mobileMenuIcon {
+    #mobileMenuIcon, #searchIcon {
         display: none;
+    }
+
+    #searchWrapper > *, #settingsCog, #dropDownMenu, #bckSlider {
+        display: block;
     }
 
     header {
         justify-content: space-between;
-        padding: 0.2em 1.5em;
+        padding: 0 1.5em;
     }
 
-    #mainNav {
-        display: flex;
-        gap: 1em;
+    #searchWrapper {
+        width: auto;
+        position: static;
     }
 
     #searchBar {
-        position: static;
-        width: auto;
-        border-radius: 25px;
+        font-size: 20px;
         padding: 0 0.5em;
-        margin: 0 2em;
+        margin: 0 0 0 2em;
     }
 
-    #searchBar, #settingsCog, #dropDownMenu, #bckSlider {
+    #searchBtn {
+        padding: 0.2em 1em;;
+    }
+
+    #subNavWrapper {
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    #dropDownMenu {
+        
+    }
+    #dropDownMenu i {
+        transition: 400ms ease-in-out;
+        transform: rotate(0deg);
+    }
+    #subNav {
+        display: none;
+        position: absolute;
+        top: 2em;
+        line-height: 2;
+        border-radius: 0 0 25% 25%;
+        background-color: var(--header-color);
+        padding: 0.2em 1em;
+    }
+
+    main {
+        height: 100dvh;
+        display: flex;
+        justify-content: center;
+        padding: 0 0 0 1em;
+    }
+    #focusContent {
+        width: auto;
+        max-width: 51dvw;
+        padding: 100px 2em;
+    }
+
+    #bckSlider {
+        width: 100%;
+        max-width: 1558px;
+        background: url('/Frontend/media/favicon.svg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 50% 0 0 50%;
+
+    }
+
+    h1 {
+        font-size: 85px;
+        text-align: left;
+    }
+
+    #mainCTA > i {
+        transition: 300ms ease-in-out;
+        margin: 0;
+    }
+    #mainCTA:hover > i {
+        margin: 0 0 0 15px;
+    }
+
+    #dropDownMenu:hover, #searchBtn:hover, #mainNav i:hover {
+        cursor: pointer;
+    }
+    #settingsCog:hover, #userIcon:hover {
+        transition: 200ms;
+        transform: scale(1.05);
+    }
+    #subNavWrapper:hover * i {
+        transform: rotate(180deg);
+    }
+    #subNavWrapper:hover > #subNav {
         display: block;
     }
+    #subNav a:hover {
+        color: var(--accent-color);
+    }
 
+}
+
+/* --------------------- Desktop Version -----------------------*/ 
+@media screen and (width >= 1700px) {
+    header {
+        font-size: 40px;
+    }
+
+    #searchBar {
+        font-size: 30px;
+    }
+
+    h1 {
+        font-size: 125px;
+    }
+
+    #focusContent {
+        max-width: 925px;
+    }
+    #focusContent p {
+        font-size: 30px;
+    }
+    #mainCTA {
+        font-size: 30px;
+    }
+}
+
+/* --------------------- Widescreen Version -----------------------*/ 
+@media screen and (width >= 2000px) {
+    #focusContent p {
+        font-size: 40px;
+    }
+    #mainCTA {
+        font-size: 40px;
+    }
 }
