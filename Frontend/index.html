@@ -1,20 +1,101 @@
 <!DOCTYPE html>
-<html lang="da"> <!-- Sæt det korrekte sprog her -->
+<html lang="da-dk">
 <head>
-  <meta charset="UTF-8">
-  <title>Min Hjemmeside</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hard-Skills Station</title>
+    <meta name="title" content="Hard-Skills Station | Koldings unikke kvalificeringsmuligheder">
+    <meta name="description" content="Hard-Skills Station arbejder sammen med Koldings virksomheder til at give studerende og alumner unikke opkvalificeringsmuligheder i et bredt sortiment af emner">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://hss.tjuulm.dk">
+    <meta property="og:title" content="Hard-Skills Station | Koldings unikke kvalificeringsmuligheder">
+    <meta property="og:description" content="Hard-Skills Station arbejder sammen med Koldings virksomheder til at give studerende og alumner unikke opkvalificeringsmuligheder i et bredt sortiment af emner">
+    <meta property="og:image" content= "media/favicon.png">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="media/favicon.png" type="image/svg">
 </head>
 <body>
-  <header>
-    <nav>
-        <p id="greeting">Hjem</p>
-        <p id="welcome">Om</p>
-
-        <button id="changeToDanish">Skift til dansk</button>
-        <button id="changeToEnglish">Switch to English</button>
-    </nav>
-  </header>
-
-  <script src="/Frontend/language.js" type="module"></script>
+    <header>
+        <i class="fa fa-bars"></i>
+        <a href="index.html"><img src="" alt="Hard-Skills Station Logo" height="53" width="53"></a>
+        <nav>
+            <p id="dropDownMenu">Tjenester<i class="fa fa-caret-down"></i></p>
+            <nav id="subNav">
+                <ul>
+                    <li><a href="#">Workshops</a></li>
+                    <li><a href="#">Kurser</a></li>
+                </ul>
+            </nav>
+            <input type="search" id="searchBar" placeholder="Søg...">
+            
+            <i class="fa fa-cog"></i>
+            <nav id="settings">
+                <button id="changeToDanish">Skift til dansk</button>
+                <button id="changeToEnglish">Switch to English</button>
+            </nav>
+            <i class="fa fa-user"></i>
+        </nav>
+    </header>
+    <main>
+        <section id="focusContent">
+            <h1>HARD-SKILLS STATION</h1>
+            <p>
+                Sammen med Koldings virksomheder giver vi studerende og alumner unikke
+                opkvalificeringsmuligheder. Emnerne spænder bredt fra Power BI, programmering
+                & no-code, video, foto, podcast til design, illustrator og laser-cutter workshops.
+                Se programmet og tilmeld dig gratis - der er begrænsede pladser, og deltagelse
+                kræver tilmelding via eventbrite.
+            </p>
+            <a href="#" id="mainCTA" class="CTAbtn">
+                SE ALLE KURSER
+                <i class="fa fa-chevron-right"></i>
+            </a>
+            <aside id="bckSlider"> <!--Info fra database fyldes heri-->
+                <h2 id="courseTitle"></h2>
+                <span id="courseDate"><i class="fa fa-calendar-alt"></i> Dato here</span>
+                <span id="courseLang">Sprog <img src="" alt="dkFlag"></img></span>
+                <span id="courseLocation"><i class="fa fa-map-marker-alt"></i>  Location here</span>
+                <nav id="sliderPagination">
+                    <ul>
+                        <li id="pagination1"></li>
+                        <li id="pagination2"></li>
+                        <li id="pagination3"></li>
+                        <li id="pagination4"></li>
+                        <li id="pagination5"></li>
+                        <li id="pagination6"></li>
+                    </ul>
+                </nav>
+            </aside>
+        </section>
+    </main>
+    <footer>
+        <h3>Kontakt os</h3>
+        <address id="contactInfo">
+            <a href="tel:+45%2079%2079%2054%2008">
+                <i class="fa-solid fa-phone"></i>
+                <span>+45 79 79 54 08</span>
+            </a>
+            <a href="mailto:campus@kolding.dk">
+                <i class="fa-regular fa-envelope"></i>
+                <span>campus@kolding.dk </span>
+            </a>
+        </address>
+        <h3>Følg os</h3>
+        <nav id="socials">
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com/campuskolding"><i class="fa-brands fa-instagram" title="Instagram"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/Koldingcampus"><i class="fa-brands fa-facebook-f" title="Facebook"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="/Frontend/language.js" type="module"></script>
 </body>
-</html>
