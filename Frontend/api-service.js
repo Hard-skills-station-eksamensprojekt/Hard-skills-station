@@ -58,11 +58,11 @@ async function displaySpecificTypeOfEvents(type) {
       const listItem = document.createElement('div');
       listItem.classList.add('data-item'); // Tilføj passende klasse eller id
       listItem.innerHTML = `
-        <p>${item.name}</p>
-        <p>${item.type}</p>
-        <p>${item.dateAndTime.split('T')[0]}</p>
-        <p>${item.dateAndTime.split('T')[1]}</p>
-        <p>${item.price}</p>
+        <h2 class="dataTitle">${item.name}</h2>
+        <span class="dataType">${item.type}</span>
+        <span class="dataDate">${item.dateAndTime.split('T')[0]}</span>
+        <span class="dataTime">${item.dateAndTime.split('T')[1]}</span>
+        <span class="dataPrice">${item.price}</span>
       `;
       dataContainer.appendChild(listItem);
     });
