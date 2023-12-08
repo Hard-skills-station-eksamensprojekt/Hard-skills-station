@@ -1,4 +1,13 @@
 {
-    "greeting": "Hej",
-    "welcome": "Velkommen til vores hjemmeside!"
+    "services": "Tjenester",
+    "workshops": "Workshops",
+    "courses":"Kurser",
+    "micro_credentials":"Micro credentials",
+    "about":"Sammen med Koldings virksomheder giver vi studerende og alumner unikke opkvalificeringsmuligheder. Emnerne spænder bredt fra Power BI, programmering & no-code, video, foto, podcast til design, illustrator og laser-cutter workshops. Se programmet og tilmeld dig gratis - der er begrænsede pladser, og deltagelse kræver tilmelding via eventbrite.",
+    "all_courses":"SE ALLE KURSER",
+    "date":"Dato her",
+    "language":"Sprog",
+    "location":"Lokation her",
+    "contact_us":"Kontakt os",
+    "follow_us":"Følg os"
 }

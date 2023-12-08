@@ -1,0 +1,15 @@
+/* Ekstern styles.css fil */
+.data-container {
+    display: flex; /* Brug af Flexbox */
+    flex-wrap: wrap; /* Tillad elementer at wrappe til næste linje */
+    gap: 10px; /* Afstand mellem elementerne */
+}
+  
+.data-item {
+    /* Stil for hvert enkelt dataelement */
+    width: 200px; /* Juster bredden efter dit layout */
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+}
+  
