@@ -244,8 +244,68 @@ footer h3 {
         background-size: cover;
         background-position: center;
         border-radius: 50% 0 0 50%;
+    }
+
+    #data-container {
+        width: 100%;    
+        height: 100%;
+        border-radius: 50% 0 0 50%;
+        overflow-x: hidden;
+        padding: 100px 0 0 2em;
+    }
+    #data-container > .data-item:nth-child(1) {
+        display: block;
+    }
+    .data-item {
+        display: none;
+        flex-direction: column;
+        line-height: 1.3;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 1em 0 1em 7em;
+    }
+    .data-item > *:not(:nth-child(1)):not(:nth-child(3)) {
+        width: fit-content;
+        margin: 0 2em 0 0;
+    }
+    .dataTitle {
+        font-size: 30px;
+    }
+    .dataType {
+        position: relative;
+        width: fit-content;
+        background-color: lightslategray;
+        text-transform: capitalize;
+        padding: 0.1em 0.3em;
+        border-radius: 25px;
+    }
+    .dataDate {
+        width: fit-content;
+        position: relative;
+        margin: 0 0 0 2em;
+    }
+    .dataDate::before {
+        position: absolute;
+        left: -35px;
+        bottom: 0;
+        font-family: "Font Awesome 5 Free";
+        content: "\f073";
+        display: inline-block;
+        padding: 0 0 0 10px;
+        vertical-align: middle;
+        font-weight: 900;
+    }
+    .dataTime {
 
     }
+    .dataPrice {
+        position: relative;
+        background-color:limegreen;
+        color: black;
+        font-weight: bold;
+        padding: 0.2em 0.6em;
+        border-radius: 25px;
+    }
+
 
     h1 {
         font-size: 85px;
@@ -311,6 +371,9 @@ footer h3 {
     #mainCTA {
         font-size: 30px;
     }
+    .data-item {
+        padding: 1em 0 1em 10.5em;
+    }
 }
 
 /* --------------------- Widescreen Version -----------------------*/ 
@@ -320,5 +383,8 @@ footer h3 {
     }
     #mainCTA {
         font-size: 40px;
+    }
+    .data-item {
+        padding: 1em 0 1em 20em;
     }
 }
