@@ -2,7 +2,7 @@ import { displayData, displaySpecificEvent, displaySpecificTypeOfEvents, display
 import { changeLanguage } from "./language.js";
 
 document.addEventListener('DOMContentLoaded', function() {
-    displaySpecificTypeOfEvents('workshops');
+    displaySpecificTypeOfEvents('workshops', 1, 4);
 });
 // Lyt efter klik på knappen for at skifte til dansk
 document.getElementById('changeToDanish').addEventListener('click', function() {

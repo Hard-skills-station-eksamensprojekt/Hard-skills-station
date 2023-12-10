@@ -29,9 +29,9 @@ async function fetchSpecificEvent(id){
     const data = await response.json();
     return data;
 }
-async function fetchSpecificTypeOfEvent(type, page = 1, limit = 10){
+async function fetchSpecificTypeOfEvent(type){
     // Lav en GET-forespørgsel til API'en ved hjælp af fetch()
-    const getEventsOfSpecificType = baseUrl + typeOfEvent + type + '?page=' + page + '&limit=' + limit;
+    const getEventsOfSpecificType = baseUrl + typeOfEvent + type;
     const response = await fetch(getEventsOfSpecificType);
 
     if (!response.ok) {
