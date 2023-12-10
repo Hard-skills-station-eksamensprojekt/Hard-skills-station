@@ -1,4 +1,4 @@
-import { fetchAllEvents, fetchSpecificTypeOfEvent, fetchSpecificEvent } from './api-requests.js';
+import { fetchAllEvents, fetchSpecificTypeOfEvent, fetchSpecificEvent, fetchUpcomingEvents } from './api-requests.js';
 //Funktion til at vise data i HTML
 async function displayData() {
   try {
@@ -10,13 +10,11 @@ async function displayData() {
       const listItem = document.createElement('div');
       listItem.classList.add('data-item'); // Tilføj passende klasse eller id
       listItem.innerHTML = `
-        <p>${item.name}</p>
-        <p>${item.description}</p>
-        <p>${item.type}</p>
-        <p>${item.dateAndTime}</p>
-        <p>${item.company}</p>
-        <p>${item.location}</p>
-        <p>${item.price}</p>
+        <h2 class="dataTitle">${item.name}</h2>
+        <span class="dataType">${item.type}</span>
+        <span class="dataDate">${item.dateAndTime.split('T')[0]}</span>
+        <span class="dataTime">${item.dateAndTime.split('T')[1]}</span>
+        <span class="dataPrice">${item.price}</span>
       `;
       dataContainer.appendChild(listItem);
     });
@@ -34,13 +32,11 @@ async function displaySpecificEvent(id) {
       const listItem = document.createElement('div');
       listItem.classList.add('data-item'); // Tilføj passende klasse eller id
       listItem.innerHTML = `
-        <p>${item.name}</p>
-        <p>${item.description}</p>
-        <p>${item.type}</p>
-        <p>${item.dateAndTime}</p>
-        <p>${item.company}</p>
-        <p>${item.location}</p>
-        <p>${item.price}</p>
+        <h2 class="dataTitle">${item.name}</h2>
+        <span class="dataType">${item.type}</span>
+        <span class="dataDate">${item.dateAndTime.split('T')[0]}</span>
+        <span class="dataTime">${item.dateAndTime.split('T')[1]}</span>
+        <span class="dataPrice">${item.price}</span>
       `;
       dataContainer.appendChild(listItem);
     });
@@ -70,4 +66,26 @@ async function displaySpecificTypeOfEvents(type) {
     console.error('Der opstod et problem med forbindelsen:', error);
   }
 }
-export { displayData, displaySpecificEvent, displaySpecificTypeOfEvents }
+async function displayUpcomingEvents(type) {
+  try {
+    const data = await fetchUpcomingEvents(type); // Hent data fra API-modulet
+
+    const dataContainer = document.getElementById('data-container');
+    // Generer dynamisk HTML baseret på dataene og vis det i containeren
+    data.forEach(item => {
+      const listItem = document.createElement('div');
+      listItem.classList.add('data-item'); // Tilføj passende klasse eller id
+      listItem.innerHTML = `
+        <h2 class="dataTitle">${item.name}</h2>
+        <span class="dataType">${item.type}</span>
+        <span class="dataDate">${item.dateAndTime.split('T')[0]}</span>
+        <span class="dataTime">${item.dateAndTime.split('T')[1]}</span>
+        <span class="dataPrice">${item.price}</span>
+      `;
+      dataContainer.appendChild(listItem);
+    });
+  } catch (error) {
+    console.error('Der opstod et problem med forbindelsen:', error);
+  }
+}
+export { displayData, displaySpecificEvent, displaySpecificTypeOfEvents, displayUpcomingEvents }

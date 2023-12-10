@@ -1,4 +1,4 @@
-import { displayData, displaySpecificEvent, displaySpecificTypeOfEvents } from "./api-service.js";
+import { displayData, displaySpecificEvent, displaySpecificTypeOfEvents, displayUpcomingEvents } from "./api-service.js";
 import { changeLanguage } from "./language.js";
 
 document.addEventListener('DOMContentLoaded', function() {

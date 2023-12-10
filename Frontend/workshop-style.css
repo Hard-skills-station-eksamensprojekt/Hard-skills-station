@@ -3,6 +3,8 @@
     display: flex; /* Brug af Flexbox */
     flex-wrap: wrap; /* Tillad elementer at wrappe til næste linje */
     gap: 10px; /* Afstand mellem elementerne */
+    margin-top:70px;
+    padding-top: 20px;
 }
   
 .data-item {
