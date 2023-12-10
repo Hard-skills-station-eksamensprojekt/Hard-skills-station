@@ -48,6 +48,7 @@ header {
     background-color: var(--header-color);
     padding: 0.2em 0;
     margin: 0 auto;
+    z-index: 10;
 }
 
 #searchWrapper > *, #settings, #settingsCog, #dropDownMenu, #subNav, #bckSlider{
@@ -84,6 +85,7 @@ header {
 }
 
 #mainNav {
+    position: relative;
     display: flex;
     height: 100%;
     align-items: center;
@@ -227,19 +229,25 @@ footer h3 {
         display: block;
     }
 
+    #mobileMenu {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
     #settings {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.5em;
+        gap: 0.8em;
         position: absolute;
-        top: 2.2em;
-        right: 2.7em;
-        line-height: 1.7;
-        font-size: 25px;
-        border-radius: 0 0 25% 25%;
+        top: -10em;
+        right: 6.6em;
+        font-size: 12px;
+        transition: top 0.3s ease;
+        border-radius: 0 0 25px 25px;
         background-color: var(--header-color);
-        padding: 1em 1em 0.6em 1em;
+        padding: 1em 1em 1.5em 1em;
+        z-index: 2;
     }
     #settings img:hover {
         cursor: pointer;
@@ -329,12 +337,12 @@ footer h3 {
     .data-item > *:not(:nth-child(1)):not(:nth-child(3)) {
         width: fit-content;
         margin: 0 2em 0 0;
+        z-index: 1;
     }
     .dataTitle {
         font-size: 30px;
     }
     .dataType {
-        position: relative;
         width: fit-content;
         background-color: lightslategray;
         text-transform: capitalize;
@@ -358,7 +366,6 @@ footer h3 {
         font-weight: 900;
     }
     .dataPrice {
-        position: relative;
         background-color:limegreen;
         color: black;
         font-weight: bold;
