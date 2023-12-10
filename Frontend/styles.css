@@ -44,11 +44,14 @@ header {
     justify-content: space-around;
     align-items: center;
     font-size: 30px;
-    border-radius: 0 0 25px 25px;
-    background-color: var(--header-color);
     padding: 0.2em 0;
     margin: 0 auto;
     z-index: 10;
+}
+
+.roundedEdge {
+    border-radius: 0 0 25px 25px;
+    background-color: var(--header-color);
 }
 
 #searchWrapper > *, #settings, #settingsCog, #dropDownMenu, #subNav, #bckSlider{
@@ -244,8 +247,6 @@ footer h3 {
         right: 6.6em;
         font-size: 12px;
         transition: top 0.3s ease;
-        border-radius: 0 0 25px 25px;
-        background-color: var(--header-color);
         padding: 1em 1em 1.5em 1em;
         z-index: 2;
     }
@@ -291,8 +292,6 @@ footer h3 {
         top: 2.2em;
         line-height: 1.7;
         font-size: 25px;
-        border-radius: 0 0 25% 25%;
-        background-color: var(--header-color);
         padding: 1em 1em 0.6em 1em;
     }
 

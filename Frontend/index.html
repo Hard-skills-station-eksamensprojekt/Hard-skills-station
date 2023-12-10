@@ -20,7 +20,7 @@
     <link rel="icon" href="/Frontend/media/favicon.svg" type="image/svg">
 </head>
 <body>
-    <header>
+    <header class="roundedEdge">
         <i class="fa fa-bars" id="mobileMenuIcon"></i>
         <a href="index.html" id="logoAnchor">
           <picture>
@@ -35,7 +35,7 @@
         <nav id="mainNav">
           <div id="subNavWrapper">
             <p id="dropDownMenu">Tjenester <i class="fa fa-caret-down"></i></p>
-            <nav id="subNav">
+            <nav id="subNav" class="roundedEdge">
                 <ul>
                     <li><a href="workshops.html">Workshops</a></li>
                     <li><a href="courses.html">Kurser</a></li>
@@ -56,10 +56,10 @@
     </header>
     <main>
       <div id="mobileMenu">
-        <nav id="settings">
-            <span>Sprog:</span>
-            <img src="/Frontend/media/dkFlag.svg" id="changeToDanish" alt="Skift sprog til dansk" width="50" height="30"></img>
-            <img src="/Frontend/media/usFlag.svg" id="changeToEnglish" alt="Skift sprog til engelsk" width="50" height="30"></img>
+        <nav id="settings" class="roundedEdge">
+          <span>Sprog:</span>
+          <img src="/Frontend/media/dkFlag.svg" id="changeToDanish" alt="Skift sprog til dansk" width="50" height="30"></img>
+          <img src="/Frontend/media/usFlag.svg" id="changeToEnglish" alt="Skift sprog til engelsk" width="50" height="30"></img>
           <span>Tema  :</span>
           <input checked="false" type="checkbox" class="switch" id="themeSwitch">
         </nav>
