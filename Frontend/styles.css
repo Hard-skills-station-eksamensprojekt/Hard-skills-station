@@ -125,6 +125,50 @@ h1 {
     margin: 2em 0 0 0;
 }
 
+.switch {
+    position: relative;
+    height: 1.5rem;
+    width: 3rem;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 9999px;
+    background-color: darkslategray;
+    transition: all .3s ease;
+}
+  
+.switch:checked {
+    background-color: var(--accent-color);
+}
+  
+.switch::before {
+    position: absolute;
+    content: "";
+    left: calc(1.5rem - 1.6rem);
+    top: calc(1.5rem - 1.6rem);
+    display: block;
+    height: 1.6rem;
+    width: 1.6rem;
+    cursor: pointer;
+    border: 1px solid rgba(100, 116, 139, 0.527);
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(100, 116, 139, 0.327);
+    transition: all 300ms ease;
+}
+  
+.switch:hover::before {
+    box-shadow: 0 0 0px 8px rgba(0, 0, 0, .15)
+}
+  
+.switch:checked:hover::before {
+    box-shadow: 0 0 0px 8px rgba(236, 165, 72, 0.15)
+}
+  
+.switch:checked:before {
+    transform: translateX(100%);
+    border-color: var(--accent-color);
+}
 
 footer {
     width: 100dvw;
@@ -181,6 +225,25 @@ footer h3 {
 
     #searchWrapper > *, #settingsCog, #dropDownMenu, #bckSlider {
         display: block;
+    }
+
+    #settings {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+        position: absolute;
+        top: 2.2em;
+        right: 2.7em;
+        line-height: 1.7;
+        font-size: 25px;
+        border-radius: 0 0 25% 25%;
+        background-color: var(--header-color);
+        padding: 1em 1em 0.6em 1em;
+    }
+    #settings img:hover {
+        cursor: pointer;
+        transform: scale(1.05);
     }
 
     header {
@@ -294,9 +357,6 @@ footer h3 {
         vertical-align: middle;
         font-weight: 900;
     }
-    .dataTime {
-
-    }
     .dataPrice {
         position: relative;
         background-color:limegreen;
@@ -356,6 +416,10 @@ footer h3 {
         line-height: 1.7;
         font-size: 30px;
         padding: 0.2em 1em 0.6em 1em;
+    }
+
+    #settings {
+        right: 4.7em;
     }
 
     h1 {

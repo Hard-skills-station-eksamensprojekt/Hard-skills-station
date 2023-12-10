@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" viewBox="0 0 200 120">
+  <g id="dkFlag" transform="translate(-2196 -61)">
+    <rect id="Rectangle_1" data-name="Rectangle 1" width="200" height="120" transform="translate(2196 61)" fill="red"/>
+    <rect id="Rectangle_2" data-name="Rectangle 2" width="26" height="120" transform="translate(2271 61)" fill="#fff"/>
+    <rect id="Rectangle_3" data-name="Rectangle 3" width="26" height="200" transform="translate(2396 108) rotate(90)" fill="#fff"/>
+  </g>
+</svg>

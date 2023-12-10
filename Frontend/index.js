@@ -5,10 +5,24 @@ document.addEventListener('DOMContentLoaded', function() {
     displaySpecificTypeOfEvents('kurser');
 });
 
-function setTheme(themeName) {
-    localStorage.setItem('theme', themeName);
-    document.documentElement.className = themeName;
+const themeSwitch = document.getElementById('themeSwitch');
+themeSwitch.addEventListener('click', function() {
+    if(themeSwitch.checked) {
+        localStorage.setItem('theme', 'darkMode');
+        document.documentElement.className = 'darkMode';
+    } else {
+        localStorage.setItem('theme', 'default');
+        document.documentElement.className = 'default';
+    }
+});
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    document.documentElement.className = savedTheme;
+    if (savedTheme === 'darkMode') {
+        themeSwitch.checked;
+    }
 }
-setTheme('darkMode');
+
 
 changeLanguage('da', 'index');
