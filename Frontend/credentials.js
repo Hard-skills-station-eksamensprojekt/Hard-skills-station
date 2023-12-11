@@ -1,12 +1,10 @@
 import { displayData, displaySpecificEvent, displaySpecificTypeOfEvents, displayUpcomingEvents } from "./api-service.js";
 import { changeLanguage } from "./language.js";
-import { updatePagination } from "./pagination-translations.js";
 
 document.addEventListener('DOMContentLoaded', function() {
-    displaySpecificTypeOfEvents('workshops', 1, 4);
+    displaySpecificTypeOfEvents('credentials', 1, 4);
 });
 
-//Ændrer temaet på hjemmesiden når der klikkes på slider knappen:
 const themeSwitch = document.getElementById('themeSwitch');
 themeSwitch.addEventListener('click', function() {
     if(themeSwitch.checked) {
