@@ -1,0 +1,11 @@
+{
+    "name": "Navn",
+    "type": "Type",
+    "date": "Dato",
+    "time": "Tid",
+    "price": "Pris",
+    "previous": "Forrige",
+    "next": "Næste",
+    "page": "Side",
+    "of": "af"
+}

@@ -1,9 +1,9 @@
-import { displayData, displaySpecificEvent, displaySpecificTypeOfEvents } from "./api-service.js";
+import { displayData, displaySpecificEvent, displaySpecificTypeOfEvents, displayUpcomingEvents } from "./api-service.js";
 import { changeLanguage } from "./language.js";
 
 //Henter data fra databasen gennem API:
 document.addEventListener('DOMContentLoaded', function() {
-    displaySpecificTypeOfEvents('kurser');
+    displayUpcomingEvents(1, 4);
 });
 
 //Ændrer temaet på hjemmesiden når der klikkes på slider knappen:

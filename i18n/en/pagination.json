@@ -1,0 +1,12 @@
+{
+    "name": "Name",
+    "type": "Type",
+    "date": "Date",
+    "time": "Time",
+    "price": "Price",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page",
+    "of": "out of"
+}
+  

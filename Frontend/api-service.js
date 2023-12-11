@@ -61,7 +61,7 @@ async function displayData() {
 
     const totalPages = Math.ceil(data.length / limit);
 
-    createPaginationButtons(type, page, totalPages, displayData, limit);
+    createPaginationButtons(page, totalPages, displayData, limit);
   } catch (error) {
     console.error('Der opstod et problem med forbindelsen:', error);
   }
@@ -100,7 +100,7 @@ async function displaySpecificEvent(id) {
 
     const totalPages = Math.ceil(data.length / limit);
 
-    createPaginationButtons(type, page, totalPages, displaySpecificEvent, limit);
+    createPaginationButtons(page, totalPages, displaySpecificEvent, limit);
   } catch (error) {
     console.error('Der opstod et problem med forbindelsen:', error);
   }
@@ -144,9 +144,9 @@ async function displaySpecificTypeOfEvents(type, page = 1, limit = 4) {
     console.error('Der opstod et problem med forbindelsen:', error);
   }
 }
-async function displayUpcomingEvents(type) {
+async function displayUpcomingEvents(page = 1, limit = 6) {
   try {
-    const data = await fetchUpcomingEvents(type); // Hent data fra API-modulet
+    const data = await fetchUpcomingEvents(); // Hent data fra API-modulet
 
     const dataContainer = document.getElementById('data-container');
     dataContainer.innerHTML = ''; // Ryd tidligere vist data
@@ -178,7 +178,7 @@ async function displayUpcomingEvents(type) {
 
     const totalPages = Math.ceil(data.length / limit);
 
-    createPaginationButtons(type, page, totalPages, displayUpcomingEvents, limit);
+    createPaginationButtons(page, totalPages, displayUpcomingEvents, limit);
   } catch (error) {
     console.error('Der opstod et problem med forbindelsen:', error);
   }

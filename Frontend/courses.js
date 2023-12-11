@@ -1,8 +1,9 @@
 import { displayData, displaySpecificEvent, displaySpecificTypeOfEvents } from "./api-service.js";
 import { changeLanguage } from "./language.js";
+import { updatePagination } from "./pagination-translations.js";
 
 document.addEventListener('DOMContentLoaded', function() {
-    displaySpecificTypeOfEvents('kurser');
+    displaySpecificTypeOfEvents('kurser', 1, 4);
 });
 
 //Ændrer temaet på hjemmesiden når der klikkes på slider knappen:
