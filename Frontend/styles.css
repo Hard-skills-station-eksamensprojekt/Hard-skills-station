@@ -54,8 +54,51 @@ header {
     background-color: var(--header-color);
 }
 
-#searchWrapper > *, #settings, #settingsCog, #dropDownMenu, #subNav, #bckSlider{
+#searchWrapper > *, #settingsCog, #dropDownMenu, #subNav, #bckSlider {
     display: none;
+}
+
+#mobileMenu {
+    width: 85dvw;
+    height: 100dvh;
+    display: flex;
+    position: absolute;
+    left: -100%;
+    font-size: 25px;
+    transition: 0.3s ease;
+    background-color: var(--header-color);
+    padding: 3em 1em 3em 1.5em;
+    z-index: 100;
+}
+
+#mobileMenu a {
+    font-size: 35px;
+    line-height: 2;
+}
+
+#mobileMenu ul {
+    margin: 0 0 2em 0;
+}
+
+#closeMobileMenu {
+    position: absolute;
+    top: 0.7em;
+    left: 1em;
+    font-size: 30px;
+}
+
+#darken {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 99;
+}
+
+#settings {
+    display: flex;
+    flex-direction: column;
 }
 
 #searchWrapper {
@@ -88,7 +131,6 @@ header {
 }
 
 #mainNav {
-    position: relative;
     display: flex;
     height: 100%;
     align-items: center;
@@ -233,22 +275,37 @@ footer h3 {
     }
 
     #mobileMenu {
-        position: absolute;
-        top: 0;
-        right: 0;
+        width: auto;
+        height: auto;
+        top: -10em;
+        left: unset;
+        right: 3.2em;
+        background-color: transparent;
+        padding: 0;
+        z-index: 0;
     }
+
     #settings {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 0.8em;
-        position: absolute;
-        top: -10em;
-        right: 6.6em;
+        position: static;
         font-size: 12px;
-        transition: top 0.3s ease;
         padding: 1em 1em 1.5em 1em;
         z-index: 2;
+    }
+    #languageWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4em;
+    }
+    #closeMobileMenu {
+        display: none;
+    }
+    #settings ul {
+        display: none;
     }
     #settings img:hover {
         cursor: pointer;
@@ -424,7 +481,7 @@ footer h3 {
         padding: 0.2em 1em 0.6em 1em;
     }
 
-    #settings {
+    #mobileMenu {
         right: 4.7em;
     }
 

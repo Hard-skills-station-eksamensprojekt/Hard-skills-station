@@ -26,17 +26,45 @@ if (savedTheme) {
 }
 //Skjuler eller viser indstillinger når der trykkes på tandhjul-ikonet
 const cog = document.getElementById('settingsCog');
-const settings = document.getElementById('settings');
+const settings = document.getElementById('mobileMenu');
 let isOpen = false;
 cog.addEventListener('click', function() {
     isOpen = !isOpen;
     if (isOpen) {
-        settings.style.top = '5em';
+        settings.style.top = '2.2em';
     } else {
         settings.style.top = '-10em';
     }
 });
 
+//Vis eller skjul mobil menuen
+const burgerMenu = document.getElementById('mobileMenuIcon');
+const darken = document.getElementById('darken');
+const closeBurger = document.getElementById('closeMobileMenu');
+burgerMenu.addEventListener('click', function() {
+    settings.style.left = "0";
+    darken.style.display = "block";
+});
+closeBurger.addEventListener('click', function() {
+    settings.style.left = "-100%";
+    darken.style.display = "none";
+});
+
+//Vis eller skjul mobil søgefelt
+const searchIcon = document.getElementById('searchIcon');
+const searchBar = document.getElementById('searchBar');
+const searchBtn = document.getElementById('searchBtn');
+let isShown = false;
+searchIcon.addEventListener('click', function() {
+    isShown = !isShown;
+    if (isShown) {
+        searchBar.style.display = "flex";
+        searchBtn.style.display = "block";
+    } else {
+        searchBar.style.display = 'none';
+        searchBtn.style.display = 'none';
+    }
+});
 
 
 changeLanguage('da', 'index');

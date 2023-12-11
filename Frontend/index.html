@@ -20,107 +20,116 @@
     <link rel="icon" href="/Frontend/media/favicon.svg" type="image/svg">
 </head>
 <body>
-    <header class="roundedEdge">
-        <i class="fa fa-bars" id="mobileMenuIcon"></i>
-        <a href="index.html" id="logoAnchor">
-          <picture>
-            <source
-            srcset="/Frontend/media/hssLogoWide.svg"
-            width="150"
-            media="(min-width: 725px)"
-            >
-            <img src="/Frontend/media/hssLogo.svg" alt="Hard-Skills Station Logo" height="50" width="50">
-          </picture>
-        </a>
-        <nav id="mainNav">
-          <div id="subNavWrapper">
-            <p id="dropDownMenu">Tjenester <i class="fa fa-caret-down"></i></p>
-            <nav id="subNav" class="roundedEdge">
+  <div id="darken"></div>
+  <header class="roundedEdge">
+      <i class="fa fa-bars" id="mobileMenuIcon"></i>
+      <a href="index.html" id="logoAnchor">
+        <picture>
+          <source
+          srcset="/Frontend/media/hssLogoWide.svg"
+          width="150"
+          media="(min-width: 725px)">
+          <img src="/Frontend/media/hssLogo.svg" alt="Hard-Skills Station Logo" height="50" width="50">
+        </picture>
+      </a>
+      <nav id="mainNav">
+        <div id="subNavWrapper">
+          <p id="dropDownMenu">Tjenester <i class="fa fa-caret-down"></i></p>
+          <nav id="subNav" class="roundedEdge">
+            <ul>
+              <li><a href="workshops.html">Workshops</a></li>
+              <li><a href="courses.html">Kurser</a></li>
+              <li><a href="credentials.html">Credentials</a></li>
+            </ul>
+          </nav>
+        </div>
+        <form action="#" id="searchWrapper">
+          <input type="search" id="searchBar" placeholder="Søg...">
+          <button type="submit" id="searchBtn">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+        <i class="fa fa-search" id="searchIcon"></i>
+        <i class="fa fa-cog" id="settingsCog"></i>
+
+        <i class="fa fa-user" id="userIcon"></i>
+      </nav>
+  </header>
+  <div id="mobileMenu">
+    <i class="fas fa-x" id="closeMobileMenu"></i>
+    <nav id="settings" class="roundedEdge">
+      <ul>
+        <li><a href="workshops.html">Workshops</a></li>
+        <li><a href="courses.html">Kurser</a></li>
+        <li><a href="credentials.html">Credentials</a></li>
+      </ul>
+      <span>Sprog:</span>
+      <div id="languageWrapper">
+        <img src="/Frontend/media/dkFlag.svg" id="changeToDanish" alt="Skift sprog til dansk" width="50" height="30"></img>
+        <img src="/Frontend/media/usFlag.svg" id="changeToEnglish" alt="Skift sprog til engelsk" width="50" height="30"></img>
+      </div>
+      <span>Tema:</span>
+      <input checked="false" type="checkbox" class="switch" id="themeSwitch">
+    </nav>
+  </div>
+  <main>
+      <section id="focusContent">
+          <h1>HARD-SKILLS STATION</h1>
+          <p>
+              Sammen med Koldings virksomheder giver vi studerende og alumner unikke
+              opkvalificeringsmuligheder.
+          </p>
+          <p>Emnerne spænder bredt fra Power BI, programmering
+            & no-code, video, foto, podcast til design, illustrator og laser-cutter workshops.
+            Se programmet og tilmeld dig gratis - der er begrænsede pladser, og deltagelse
+            kræver tilmelding via eventbrite.
+          </p>
+          <a href="courses.html" id="mainCTA" class="CTAbtn">
+              SE ALLE KURSER
+              <i class="fa fa-chevron-right"></i>
+          </a>
+        </section>
+        <aside id="bckSlider"> 
+          <div id="data-container"></div> <!--Info fra database fyldes heri-->
+            <nav id="sliderPagination">
                 <ul>
-                    <li><a href="workshops.html">Workshops</a></li>
-                    <li><a href="courses.html">Kurser</a></li>
+                    <li id="pagination1"></li>
+                    <li id="pagination2"></li>
+                    <li id="pagination3"></li>
+                    <li id="pagination4"></li>
+                    <li id="pagination5"></li>
+                    <li id="pagination6"></li>
                 </ul>
             </nav>
-          </div>
-          <form action="#" id="searchWrapper">
-            <input type="search" id="searchBar" placeholder="Søg...">
-            <button type="submit" id="searchBtn">
-              <i class="fa fa-search"></i>
-            </button>
-          </form>
-          <i class="fa fa-search" id="searchIcon"></i>
-          <i class="fa fa-cog" id="settingsCog"></i>
-
-          <i class="fa fa-user" id="userIcon"></i>
-        </nav>
-    </header>
-    <main>
-      <div id="mobileMenu">
-        <nav id="settings" class="roundedEdge">
-          <span>Sprog:</span>
-          <img src="/Frontend/media/dkFlag.svg" id="changeToDanish" alt="Skift sprog til dansk" width="50" height="30"></img>
-          <img src="/Frontend/media/usFlag.svg" id="changeToEnglish" alt="Skift sprog til engelsk" width="50" height="30"></img>
-          <span>Tema  :</span>
-          <input checked="false" type="checkbox" class="switch" id="themeSwitch">
-        </nav>
-      </div>
-        <section id="focusContent">
-            <h1>HARD-SKILLS STATION</h1>
-            <p>
-                Sammen med Koldings virksomheder giver vi studerende og alumner unikke
-                opkvalificeringsmuligheder.
-            </p>
-            <p>Emnerne spænder bredt fra Power BI, programmering
-              & no-code, video, foto, podcast til design, illustrator og laser-cutter workshops.
-              Se programmet og tilmeld dig gratis - der er begrænsede pladser, og deltagelse
-              kræver tilmelding via eventbrite.
-            </p>
-            <a href="courses.html" id="mainCTA" class="CTAbtn">
-                SE ALLE KURSER
-                <i class="fa fa-chevron-right"></i>
-            </a>
-          </section>
-          <aside id="bckSlider"> 
-            <div id="data-container"></div> <!--Info fra database fyldes heri-->
-              <nav id="sliderPagination">
-                  <ul>
-                      <li id="pagination1"></li>
-                      <li id="pagination2"></li>
-                      <li id="pagination3"></li>
-                      <li id="pagination4"></li>
-                      <li id="pagination5"></li>
-                      <li id="pagination6"></li>
-                  </ul>
-              </nav>
-          </aside>
-    </main>
-    <footer>
-      <div class="wrapper">
-        <h3 id="contactH3">Kontakt os</h3>
-        <address id="contactInfo">
-            <a href="tel:+45%2079%2079%2054%2008">
-                <i class="fa-solid fa-phone"></i>
-                <span>+45 79 79 54 08</span>
-            </a><br>
-            <a href="mailto:campus@kolding.dk">
-                <i class="fa-regular fa-envelope"></i>
-                <span>campus@kolding.dk </span>
-            </a>
-        </address>
-      </div>
-      <div class="wrapper">
-        <h3 id="socialH3">Følg os</h3>
-        <nav id="socials">
-            <ul>
-                <li>
-                    <a href="https://www.instagram.com/campuskolding"><i class="fa-brands fa-instagram" title="Instagram"></i></a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/Koldingcampus"><i class="fa-brands fa-facebook-f" title="Facebook"></i></a>
-                </li>
-            </ul>
-        </nav>
-      </div>
-    </footer>
-    <script src="/Frontend/index.js" type="module"></script>
+        </aside>
+  </main>
+  <footer>
+    <div class="wrapper">
+      <h3 id="contactH3">Kontakt os</h3>
+      <address id="contactInfo">
+          <a href="tel:+45%2079%2079%2054%2008">
+              <i class="fa-solid fa-phone"></i>
+              <span>+45 79 79 54 08</span>
+          </a><br>
+          <a href="mailto:campus@kolding.dk">
+              <i class="fa-regular fa-envelope"></i>
+              <span>campus@kolding.dk </span>
+          </a>
+      </address>
+    </div>
+    <div class="wrapper">
+      <h3 id="socialH3">Følg os</h3>
+      <nav id="socials">
+          <ul>
+              <li>
+                  <a href="https://www.instagram.com/campuskolding"><i class="fa-brands fa-instagram" title="Instagram"></i></a>
+              </li>
+              <li>
+                  <a href="https://www.facebook.com/Koldingcampus"><i class="fa-brands fa-facebook-f" title="Facebook"></i></a>
+              </li>
+          </ul>
+      </nav>
+    </div>
+  </footer>
+  <script src="/Frontend/index.js" type="module"></script>
 </body>
