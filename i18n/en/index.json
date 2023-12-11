@@ -1,13 +1,18 @@
 {
-    "services": "Services",
+    "dropDownMenu": "Services",
     "workshops": "Workshops",
     "courses":"Courses",
-    "micro_credentials":"Micro credentials",
-    "about":"Together with the corporations of Kolding, we're providing students and alumni with unique qualification opportunities. The topics span wide from Power BI, programming & no-code, video, foto, podcasts to design, illustrator and laser-cutter workshops. See the program and sign up for free. There is only a limited amount of spots available and in order to participate you need to signup through eventbrite.",
-    "all_courses":"SEE ALL COURSES",
+    "micro_credentials":"Credentials",
+    "about":"Together with the corporations of Kolding, we're providing students and alumni with unique qualification opportunities.", 
+    "aboutTwo":"The topics span wide from Power BI, programming & no-code, video, foto, podcasts to design, illustrator and laser-cutter workshops. See the program and sign up for free. There is only a limited amount of spots available and in order to participate you need to signup through eventbrite.",
+    "mainCTA":"SEE ALL COURSES",
     "date":"Date here",
     "language":"Language",
+    "theme":"Theme",
     "location":"Location here",
-    "contact_us":"Contact us",
-    "follow_us":"Follow us"
+    "contactH3":"Contact us",
+    "socialH3":"Follow us",
+    "workshops_two": "Workshops",
+    "courses_two":"Courses",
+    "micro_credentials_two":"Credentials"
 }
