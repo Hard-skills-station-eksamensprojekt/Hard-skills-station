@@ -73,6 +73,24 @@ namespace HSSAPI
                 }
                 else { return Results.NotFound("Ikke defineret type"); }
             });
+            app.MapGet("/upcomingEvents", async (EventsContext eventContext) =>
+            {
+                var eventsUpcoming = await eventContext.Events
+                    .Where(e => e.DateAndTime > DateTime.Now)
+                    .ToListAsync();
+                return Results.Ok(eventsUpcoming);
+            });
+            app.MapGet("/eventsCompany/{company}", async (string company, EventsContext eventContext) =>
+            {
+                var eventsOfCompany = await eventContext.Events
+                    .Where(e => e.Company == company)
+                    .ToListAsync();
+                if (eventsOfCompany != null)
+                {
+                    return Results.Ok(eventsOfCompany);
+                }
+                else { return Results.NotFound("Ingen events af dette firma"); }
+            });
 
             app.MapPost("/createEvent", (Events events, EventsContext eventCT) =>
             {
