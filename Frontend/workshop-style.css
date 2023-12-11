@@ -11,11 +11,32 @@
 }
   
 .data-item {
-    width: 200px;
-    height:200px;
+    width: 400px;
+    height:400px;
     padding: 10px;
     border: 1px solid #ccc;
     margin: 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 2;
+}
+.data-item::before{
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 40%;
+    content: ''; /* Indhold af pseudo-elementet */
+}
+
+.data-item h2,
+.data-item span {
+    position: relative;
+    z-index: 3; /* Sørg for, at teksten ligger over pseudo-elementet */
 }
 
 .pagination-container {
