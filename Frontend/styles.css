@@ -167,9 +167,20 @@ h1 {
     
 }
 #mainCTA {
+    position: relative;
     font-size: 24px;
-    padding: 0.7em 1em;
+    transition: 300ms ease-in-out;
+    padding: 0.7em 2em 0.7em 1em;
     margin: 2em 0 0 0;
+}
+#mainCTA::after {
+    position: absolute;
+    right: 25px;
+    transition: 400ms ease-in-out;
+    transform: rotate(0deg);
+    font-family: "Font Awesome 5 Free";
+    content: "\f054";
+    font-weight: 900;
 }
 
 .switch {
@@ -337,11 +348,21 @@ footer h3 {
         position: relative;
         display: flex;
         align-items: center;
-    }
+    } 
 
-    #dropDownMenu i {
+    #dropDownMenu {
+        display: flex;
+        position: relative;
+    }
+    #dropDownMenu::after {
+        position: absolute;
+        right: -26px;
+        bottom: 0;
         transition: 400ms ease-in-out;
         transform: rotate(0deg);
+        font-family: "Font Awesome 5 Free";
+        content: "\f0d7";
+        font-weight: 900;
     }
     #subNav {
         display: none;
@@ -434,12 +455,11 @@ footer h3 {
         text-align: left;
     }
 
-    #mainCTA > i {
-        transition: 300ms ease-in-out;
-        margin: 0;
+    #mainCTA:hover::after {
+        right: 20px;
     }
-    #mainCTA:hover > i {
-        margin: 0 0 0 15px;
+    #mainCTA:hover {
+        padding: 0.7em 3em 0.7em 1em;
     }
 
     #dropDownMenu:hover, #searchBtn:hover, #mainNav i:hover {
@@ -449,7 +469,7 @@ footer h3 {
         transition: 200ms;
         transform: scale(1.05);
     }
-    #subNavWrapper:hover * i {
+    #subNavWrapper:hover #dropDownMenu::after {
         transform: rotate(180deg);
     }
     #subNavWrapper:hover > #subNav {
@@ -478,6 +498,10 @@ footer h3 {
         line-height: 1.7;
         font-size: 30px;
         padding: 0.2em 1em 0.6em 1em;
+    }
+
+    #dropDownMenu::after {
+        right: -35px;
     }
 
     #mobileMenu {
