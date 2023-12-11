@@ -46,6 +46,32 @@ async function displaySpecificEvent(id) {
     console.error('Der opstod et problem med forbindelsen:', error);
   }
 }
+function createPaginationButtons(type, page, totalPages, displayFunction, limit) {
+  const paginationContainer = document.getElementById('pagination-container');
+  paginationContainer.innerHTML = '';
+
+  const prevButton = document.createElement('button');
+  prevButton.textContent = 'Forrige';
+  prevButton.addEventListener('click', () => {
+    if (page > 1) {
+      displayFunction(type, page - 1, limit);
+    }
+  });
+  paginationContainer.appendChild(prevButton);
+
+  const nextButton = document.createElement('button');
+  nextButton.textContent = 'Næste';
+  nextButton.addEventListener('click', () => {
+    if (page < totalPages) {
+      displayFunction(type, page + 1, limit);
+    }
+  });
+  paginationContainer.appendChild(nextButton);
+
+  const currentPageInfo = document.createElement('span');
+  currentPageInfo.textContent = `Side ${page} af ${totalPages}`;
+  paginationContainer.appendChild(currentPageInfo);
+}
 async function displaySpecificTypeOfEvents(type, page = 1, limit = 4) {
   try {
     const data = await fetchSpecificTypeOfEvent(type); // Hent data fra API-modulet
@@ -72,33 +98,9 @@ async function displaySpecificTypeOfEvents(type, page = 1, limit = 4) {
       dataContainer.appendChild(listItem);
     });
 
-    // Tilføj enkel paginering (forrige og næste knapper)
-    const paginationContainer = document.getElementById('pagination-container');
-    paginationContainer.innerHTML = '';
-
-    const prevButton = document.createElement('button');
-    prevButton.textContent = 'Forrige';
-    prevButton.addEventListener('click', () => {
-      if (page > 1) {
-        displaySpecificTypeOfEvents(type, page - 1, limit);
-      }
-    });
-    paginationContainer.appendChild(prevButton);
-
-    const nextButton = document.createElement('button');
-    nextButton.textContent = 'Næste';
-    nextButton.addEventListener('click', () => {
-      if (endIndex < data.length) {
-        displaySpecificTypeOfEvents(type, page + 1, limit);
-      }
-    });
-    paginationContainer.appendChild(nextButton);
-
     const totalPages = Math.ceil(data.length / limit);
 
-    const currentPageInfo = document.createElement('span');
-    currentPageInfo.textContent = `Side ${page} af ${totalPages}`;
-    paginationContainer.appendChild(currentPageInfo);
+    createPaginationButtons(type, page, totalPages, displaySpecificTypeOfEvents, limit);
   } catch (error) {
     console.error('Der opstod et problem med forbindelsen:', error);
   }
