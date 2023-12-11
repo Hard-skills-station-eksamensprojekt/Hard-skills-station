@@ -1,15 +1,39 @@
 /* Ekstern styles.css fil */
 .data-container {
-    display: flex; /* Brug af Flexbox */
-    flex-wrap: wrap; /* Tillad elementer at wrappe til næste linje */
-    gap: 10px; /* Afstand mellem elementerne */
-}
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 70px;
+    padding-top: 20px;
+    justify-content: center; /* Centrerer indholdet vandret */
+    align-items: center; /* Centrerer indholdet lodret */
+    text-align: center; /* Centrerer teksten */
+  }
   
 .data-item {
-    /* Stil for hvert enkelt dataelement */
-    width: 200px; /* Juster bredden efter dit layout */
+    width: 200px;
+    height:200px;
     padding: 10px;
     border: 1px solid #ccc;
     margin: 5px;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+  
+.pagination-container button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+  
+.pagination-container button:hover {
+    background-color: #e0e0e0;
 }
   

@@ -21,28 +21,82 @@
     <link rel="stylesheet" href="workshop-style.css">
 </head>
 <body>
-    <header>
-        <i class="fa fa-bars" id="mobileMenuIcon"></i>
-        <a href="index.html">
-          <picture>
-            <source
-            srcset="/Frontend/media/hssLogoWide.svg"
-            width="150"
-            media="(min-width: 725px)"
-            >
-            <img src="/Frontend/media/hssLogo.svg" alt="Hard-Skills Station Logo" height="50" width="50">
-          </picture>
-        </a>
-        <div>
-            <i class="fa fa-cog" id="settingsCog"></i>
-            <button id="changeToDanish">Skift til dansk</button>
-            <button id="changeToEnglish">Switch to English</button>
-        </div>
-    </header>
-    <div id="data-container" class="data-container">
-        <!-- Her vil data blive vist -->
+  <header>
+    <i class="fa fa-bars" id="mobileMenuIcon"></i>
+    <a href="index.html" id="logoAnchor">
+      <picture>
+        <source
+        srcset="/Frontend/media/hssLogoWide.svg"
+        width="150"
+        media="(min-width: 725px)"
+        >
+        <img src="/Frontend/media/hssLogo.svg" alt="Hard-Skills Station Logo" height="50" width="50">
+      </picture>
+    </a>
+    <nav id="mainNav">
+      <div id="subNavWrapper">
+        <p id="dropDownMenu">Tjenester <i class="fa fa-caret-down"></i></p>
+        <nav id="subNav">
+            <ul>
+                <li><a href="workshops.html">Workshops</a></li>
+                <li><a href="courses.html">Kurser</a></li>
+            </ul>
+        </nav>
       </div>
-    <footer>Kontakt os</footer>
-    <script src="/Frontend/workshops.js" type="module"></script>
+      <form action="#" id="searchWrapper">
+        <input type="search" id="searchBar" placeholder="Søg...">
+        <button type="submit" id="searchBtn">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+      
+      <i class="fa fa-search" id="searchIcon"></i>
+      <i class="fa fa-cog" id="settingsCog"></i>
+      <nav id="settings">
+          <button id="changeToDanish">Skift til dansk</button>
+          <button id="changeToEnglish">Switch to English</button>
+      </nav>
+      <i class="fa fa-user" id="userIcon"></i>
+    </nav>
+  </header>
+  
+  <div id="data-container" class="data-container">
+      <!-- Her vil data blive vist -->
+  </div>
+
+  <div id="pagination-container" class="pagination-container">
+    <button id="prevButton">Forrige</button>
+    <button id="nextButton">Næste</button>
+  </div>
+
+  <footer>
+    <div class="wrapper">
+      <h3 id="contactH3">Kontakt os</h3>
+      <address id="contactInfo">
+          <a href="tel:+45%2079%2079%2054%2008">
+              <i class="fa-solid fa-phone"></i>
+              <span>+45 79 79 54 08</span>
+          </a><br>
+          <a href="mailto:campus@kolding.dk">
+              <i class="fa-regular fa-envelope"></i>
+              <span>campus@kolding.dk </span>
+          </a>
+      </address>
+    </div>
+    <div class="wrapper">
+      <h3 id="socialH3">Følg os</h3>
+      <nav id="socials">
+          <ul>
+              <li>
+                  <a href="https://www.instagram.com/campuskolding"><i class="fa-brands fa-instagram" title="Instagram"></i></a>
+              </li>
+              <li>
+                  <a href="https://www.facebook.com/Koldingcampus"><i class="fa-brands fa-facebook-f" title="Facebook"></i></a>
+              </li>
+          </ul>
+      </nav>
+    </div>
+  </footer>
+  <script src="/Frontend/workshops.js" type="module"></script>
 </body>
 </html>
