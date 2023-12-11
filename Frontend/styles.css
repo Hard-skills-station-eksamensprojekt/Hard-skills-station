@@ -500,6 +500,10 @@ footer h3 {
         padding: 0.2em 1em 0.6em 1em;
     }
 
+    #dropDownMenu::after {
+        right: -35px;
+    }
+
     #mobileMenu {
         right: 4.7em;
     }
