@@ -37,14 +37,14 @@
           <p id="dropDownMenu">Tjenester <i class="fa fa-caret-down"></i></p>
           <nav id="subNav" class="roundedEdge">
             <ul>
-              <li><a href="workshops.html">Workshops</a></li>
-              <li><a href="courses.html">Kurser</a></li>
-              <li><a href="credentials.html">Credentials</a></li>
+              <li id="workshops"><a href="workshops.html">Workshops</a></li>
+              <li id="courses"><a href="courses.html">Kurser</a></li>
+              <li id="micro_credentials"><a href="credentials.html">Credentials</a></li>
             </ul>
           </nav>
         </div>
         <form action="#" id="searchWrapper">
-          <input type="search" id="searchBar" placeholder="Søg...">
+          <input type="search" id="searchBar" placeholder="...">
           <button type="submit" id="searchBtn">
             <i class="fa fa-search"></i>
           </button>
@@ -59,34 +59,34 @@
     <i class="fas fa-x" id="closeMobileMenu"></i>
     <nav id="settings" class="roundedEdge">
       <ul>
-        <li><a href="workshops.html">Workshops</a></li>
-        <li><a href="courses.html">Kurser</a></li>
-        <li><a href="credentials.html">Credentials</a></li>
+        <li id="workshops_two"><a href="workshops.html">Workshops</a></li>
+        <li id="courses_two"><a href="courses.html">Kurser</a></li>
+        <li id="micro_credentials_two"><a href="credentials.html">Credentials</a></li>
       </ul>
-      <span>Sprog:</span>
+      <span id="language">Sprog:</span>
       <div id="languageWrapper">
         <img src="/Frontend/media/dkFlag.svg" id="changeToDanish" alt="Skift sprog til dansk" width="50" height="30"></img>
         <img src="/Frontend/media/usFlag.svg" id="changeToEnglish" alt="Skift sprog til engelsk" width="50" height="30"></img>
       </div>
-      <span>Tema:</span>
+      <span id="theme">Tema:</span>
       <input checked="false" type="checkbox" class="switch" id="themeSwitch">
     </nav>
   </div>
   <main>
       <section id="focusContent">
           <h1>HARD-SKILLS STATION</h1>
-          <p>
+          <p id="about">
               Sammen med Koldings virksomheder giver vi studerende og alumner unikke
               opkvalificeringsmuligheder.
           </p>
-          <p>Emnerne spænder bredt fra Power BI, programmering
+          <p id="aboutTwo">Emnerne spænder bredt fra Power BI, programmering
             & no-code, video, foto, podcast til design, illustrator og laser-cutter workshops.
             Se programmet og tilmeld dig gratis - der er begrænsede pladser, og deltagelse
             kræver tilmelding via eventbrite.
           </p>
           <a href="courses.html" id="mainCTA" class="CTAbtn">
-              SE ALLE KURSER
-              <i class="fa fa-chevron-right"></i>
+          SE ALLE KURSER
+          <i class="fa fa-chevron-right"></i>
           </a>
         </section>
         <aside id="bckSlider"> 

@@ -5,6 +5,7 @@ import { changeLanguage } from "./language.js";
 document.addEventListener('DOMContentLoaded', function() {
     displaySpecificTypeOfEvents('kurser');
 });
+
 //Ændrer temaet på hjemmesiden når der klikkes på slider knappen:
 const themeSwitch = document.getElementById('themeSwitch');
 themeSwitch.addEventListener('click', function() {
@@ -66,5 +67,13 @@ searchIcon.addEventListener('click', function() {
     }
 });
 
+const danishButton = document.getElementById('changeToDanish');
+const englishButton = document.getElementById('changeToEnglish');
 
-changeLanguage('da', 'index');
+danishButton.addEventListener('click', function() {
+    changeLanguage('da', 'index');
+});
+  // Lyt efter klik på knappen for at skifte til engelsk
+englishButton.addEventListener('click', function() {
+    changeLanguage('en', 'index');
+});
