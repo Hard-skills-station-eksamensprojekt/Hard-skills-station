@@ -160,7 +160,8 @@ async function displayUpcomingEvents(page = 1, limit = 6) {
     paginatedData.forEach(item => {
       const listItem = document.createElement('div');
       listItem.classList.add('data-item'); // Tilføj passende klasse eller id
-
+      const dataWrapper = document.createElement('div');
+      dataWrapper.classList.add('data-wrapper');
       listItem.style.backgroundImage = `url(${item.image})`; // Anvend billedlinket som baggrund
 
       const dataElements = document.createElement('div');
@@ -171,8 +172,8 @@ async function displayUpcomingEvents(page = 1, limit = 6) {
         <span class="dataTime">${item.dateAndTime.split('T')[1]}</span>
         <span class="dataPrice">${item.price}</span>
       `;
-
-      listItem.appendChild(dataElements);
+      dataWrapper.appendChild(dataElements);
+      listItem.appendChild(dataWrapper);
       dataContainer.appendChild(listItem);
     });
 
