@@ -67,6 +67,7 @@ searchIcon.addEventListener('click', function() {
     }
 });
 
+
 const danishButton = document.getElementById('changeToDanish');
 const englishButton = document.getElementById('changeToEnglish');
 

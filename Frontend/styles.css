@@ -398,7 +398,10 @@ footer h3 {
         border-radius: 50% 0 0 50%;
         overflow-x: hidden;
     }
-    #data-container > .data-item:nth-child(1) {
+    /* #data-container > .data-item:nth-child(1) {
+        display: block;
+    } */
+    #indexBody .data-item.active {
         display: block;
     }
     #indexBody .data-item {

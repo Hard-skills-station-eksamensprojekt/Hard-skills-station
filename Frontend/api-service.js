@@ -155,9 +155,11 @@ async function displayUpcomingEvents(page = 1, limit = 6) {
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
 
+    let dataArray = [];
+
     const paginatedData = data.slice(startIndex, endIndex); // Vælg data til den aktuelle side
     // Generer dynamisk HTML baseret på dataene og vis det i containeren
-    paginatedData.forEach(item => {
+    paginatedData.forEach((item, index) => {
       const listItem = document.createElement('div');
       listItem.classList.add('data-item'); // Tilføj passende klasse eller id
       const dataWrapper = document.createElement('div');
@@ -175,11 +177,23 @@ async function displayUpcomingEvents(page = 1, limit = 6) {
       dataWrapper.appendChild(dataElements);
       listItem.appendChild(dataWrapper);
       dataContainer.appendChild(listItem);
+      dataArray.push(listItem);
+      
+      // Tilføjer .active til det første .data-item element
+      if (index === 0) {
+        listItem.classList.add('active');
+      }
     });
+    // Automatisk skift mellem hvilken data-item der vises
+    let currentIndex = 0;
+    const intervalTime = 4000;
+    const slideItems = () => {
+      dataArray[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % dataArray.length;
+      dataArray[currentIndex].classList.add('active');
+    };
+    setInterval(slideItems, intervalTime);
 
-    const totalPages = Math.ceil(data.length / limit);
-
-    createPaginationButtons(page, totalPages, displayUpcomingEvents, limit);
   } catch (error) {
     console.error('Der opstod et problem med forbindelsen:', error);
   }
