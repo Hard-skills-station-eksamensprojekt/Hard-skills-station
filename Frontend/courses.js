@@ -1,6 +1,5 @@
 import { displayData, displaySpecificEvent, displaySpecificTypeOfEvents } from "./api-service.js";
 import { changeLanguage } from "./language.js";
-import { updatePagination } from "./pagination-translations.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     displaySpecificTypeOfEvents('kurser', 1, 4);
