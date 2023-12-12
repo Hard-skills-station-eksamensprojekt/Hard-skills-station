@@ -1,6 +1,5 @@
 import { displayData, displaySpecificEvent, displaySpecificTypeOfEvents, displayUpcomingEvents } from "./api-service.js";
 import { changeLanguage } from "./language.js";
-import { updatePagination } from "./pagination-translations.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     displaySpecificTypeOfEvents('workshops', 1, 4);
